@@ -19,3 +19,15 @@ This lab replicates basic SOC monitoring and detection engineering workflows
 # Lab Architecture Diagram
 ![Splunk Lab Architecture](images/architecture.png)
 
+# Data Sources
+*Log Source:* Windows 10 Security Event Logs
+*Fowarder:* Splunk Universal Forwarder
+*Index:* Windows
+*Sourcetype:* WinEventLog:Security
+
+#Key Event IDs Monitored
+- *4624* - Successful Logon
+- *4625* - Failed Logon
+- *4672* - Special privileges assigned to new logon
+
+
