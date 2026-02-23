@@ -17,6 +17,4 @@ This lab replicates basic SOC monitoring and detection engineering workflows
   VirtualBox Host-Only -> Windows Security Logs -> Splunk Universal Fowarder -> Splunk Server (Log 9997) -> Detection Searches -> Alerts + Dashboard
 
 # Lab Architecture Diagram
-![Splunk Lab Architecture](images/Architecture Diagram for Brute Force Lab.png)
-
-
+![Splunk Lab Architecture](images/ArchitectureDiagramforBruteForceLab.png)
