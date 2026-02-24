@@ -43,4 +43,18 @@ To identify burst patterns consistent with brute force activity, the following t
 # Visualization
 ![Vizualization](images/Visualization.png)
 
+# Attack Simulation
+Repeated RDP authentication attempts were generated from a Kali Linux VM using xfreedp3 to simulate login behavior. These attempts were successful and generated Windows Security Event ID 4625
+
+# RDP kali command
+![Vizualization](images/kalihydracommand.png)
+
+# Log Validation
+Windows Security Logs were forwarded to Splunk using the Universal Fowarder and validated in the WinEventLog:Security sourcetype
+
+# Proof
+![Vizualization](images/Proofoflog.png)
+
+
+
 
