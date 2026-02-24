@@ -25,9 +25,11 @@ This lab replicates basic SOC monitoring and detection engineering workflows
 *Index:* Windows
 *Sourcetype:* WinEventLog:Security
 
-#Key Event IDs Monitored
+# Key Event IDs Monitored
 - *4624* - Successful Logon
 - *4625* - Failed Logon
 - *4672* - Special privileges assigned to new logon
 
+# Detection
+Detection 1 - Multiple Failed Logins
 
