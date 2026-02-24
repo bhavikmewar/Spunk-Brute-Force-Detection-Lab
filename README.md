@@ -89,7 +89,7 @@ The failed authentication events were verified in:
 - Source_Network_Address field matched Kali IP
 
 # Picutre
-![Vizualization](images/WindowsEventsViewer.png)
+![Vizualization](images/WindowsEventViewer.png)
 
 # Picture
 ![Vizualization](images/SplunkRawEvents.png)
