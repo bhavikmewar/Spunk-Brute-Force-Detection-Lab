@@ -74,13 +74,13 @@ To detect this behavior, failed logon events were grouped into 5-minute brackets
 The query identified repeated failed autheication attempts from the Kali Linux VM attacker IP within a short time window
 
 # PICTURE
-SCREENSHOT
+![Vizualization](images/AggregatedDetection.png)
 
 # Attack Simulation
 Authenitcation failures were generated from a Kali Linux VM using automated login attempts
 
 # Picture
-SCREENSHOT
+![Vizualization](images/AttackSimulation.png)
 
 # Log Validation
 The failed authentication events were verified in:
@@ -89,7 +89,7 @@ The failed authentication events were verified in:
 - Source_Network_Address field matched Kali IP
 
 # Picutre
-SCREENSHOT
+![Vizualization](images/WindowsEventsViewer1.png)
 
 # Picture
-SCREENSHOT
+![Vizualization](images/SplunkRawEvents.png)
