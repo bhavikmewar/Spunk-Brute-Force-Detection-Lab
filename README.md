@@ -56,5 +56,40 @@ Windows Security Logs were forwarded to Splunk using the Universal Fowarder and 
 ![Vizualization](images/Proofoflog.png)
 
 
+# Detection 2 - Threshold Based Brute Force Detection
+# Objective
+Detect potential brute-force authentication activity by identifying multiple failed Windows login attempts (Event ID 4625) from a single source IP within a short time window
 
+This detection focuses on behavioral patterns rather than individual failed logins
 
+# Detection Logic
+Brute force attacks typically generate:
+- Multiple failed login attempts
+- From the same source IP
+- Within a short time span
+- Targeting the same account
+To detect this behavior, failed logon events were grouped into 5-minute brackets and aggregated by the source IP address
+
+# Detection Output
+The query identified repeated failed autheication attempts from the Kali Linux VM attacker IP within a short time window
+
+# PICTURE
+SCREENSHOT
+
+# Attack Simulation
+Authenitcation failures were generated from a Kali Linux VM using automated login attempts
+
+# Picture
+SCREENSHOT
+
+# Log Validation
+The failed authentication events were verified in:
+- Windows Events Viewer (Event ID 4625)
+- Splunk Raw Events (WinEventLog:Security)
+- Source_Network_Address field matched Kali IP
+
+# Picutre
+SCREENSHOT
+
+# Picture
+SCREENSHOT
