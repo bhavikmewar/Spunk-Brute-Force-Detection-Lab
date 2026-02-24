@@ -37,4 +37,10 @@ The following SPL query was created to detect excessive failed Windows authenitc
 # SPL Brute Force Detection
 ![Brute Force Detection](images/detectionquery.png)
 
+# Behavioral Visualization
+To identify burst patterns consistent with brute force activity, the following time-based analysis was performed
+
+# Visualization
+![Vizualization](images/Visualization.png)
+
 
