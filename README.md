@@ -37,3 +37,4 @@ The following SPL query was created to detect excessive failed Windows authenitc
 # SPL Brute Force Detection
 ![Brute Force Detection](images/detectionquery.png)
 
+
