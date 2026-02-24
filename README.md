@@ -32,4 +32,7 @@ This lab replicates basic SOC monitoring and detection engineering workflows
 
 # Detection
 Detection 1 - Multiple Failed Logins
+The following SPL query was created to detect excessive failed Windows authenitcation attempts (Event 4625) to indicate brute force activity:
 
+# SPL Brute Force Detection
+![Brute Force Detection](
