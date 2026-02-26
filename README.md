@@ -1,39 +1,36 @@
 # Spunk Brute Force Detection Lab
-This project documents a homelab where i built a small SIEM environment using Splunk to detect brute force login activity againsta a Windows 10 machine
-
-The goal was to simulate an attack, generate logs, forward
-# Project Overview
-The project simulates a real-world brute force attack against a Windows system 
-Windows Security Logs are forwarded to a centralized Splunk server
-Custom Search Processing Language (SPL) queries and alerts identify failed login attempts and suspicous authentication behaviors
-This lab replicates basic SOC monitoring and detection engineering workflows
+In this lab, I built a small SIEM environment using Splunk to detect brute force login attempts against a Windows 10 machine. 
+I created three virtual machines (Ubuntu Linux, Windows 10, and Kali Linux).
+The goal was to understand how brute force attacks appear in logs and how a SOC analyst would detect them.
 
 # Lab Architecture
 - Ubuntu VM - Splunk Enterprise (SIEM)
 - Windows 10 VM - Target System
 - Splunk Universal Forwarder - Log collection agent
-- VirtualBox Host-Only + NAT networking
+- VirtualBox networking (Host-Only + NAT) 
 
   Data Flow:
-  VirtualBox Host-Only -> Windows Security Logs -> Splunk Universal Fowarder -> Splunk Server (Log 9997) -> Detection Searches -> Alerts + Dashboard
+  VirtualBox Host-Only -> Windows Security Logs -> Splunk Universal Fowarder -> Splunk Server (Port 9997) -> Detection Searches -> Alerts + Dashboard
 
 # Lab Architecture Diagram
 ![Splunk Lab Architecture](images/architecture.png)
 
 # Data Sources
-*Log Source:* Windows 10 Security Event Logs
-*Fowarder:* Splunk Universal Forwarder
-*Index:* Windows
-*Sourcetype:* WinEventLog:Security
+Log Source: Windows 10 Security Event Logs
+Fowarder: Splunk Universal Forwarder
+Index: wineventlog
+Sourcetype: WinEventLog:Security
 
 # Key Event IDs Monitored
-- *4624* - Successful Logon
-- *4625* - Failed Logon
-- *4672* - Special privileges assigned to new logon
+- 4624 - Successful Logon
+- 4625 - Failed Logon
+- 4672 - Special privileges assigned to new logon
 
-# Detection
-Detection 1 - Multiple Failed Logins
-The following SPL query was created to detect excessive failed Windows authenitcation attempts (Event 4625) to indicate brute force activity:
+#  Attack Simulation
+To simulate brute force behavior, I generated repeated RDP login attempts from the Kali Linux VM using xfreerdp3 command.
+These attempts created multple Event ID 4625 logs in Windows.
+RDP kali command used:
+![Vizualization](images/kalihydracommand.png)
 
 # SPL Brute Force Detection
 ![Brute Force Detection](images/detectionquery.png)
