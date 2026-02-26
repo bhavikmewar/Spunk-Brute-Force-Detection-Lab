@@ -71,7 +71,7 @@ This detection is more realistic
 Instead of just counting failures, I grouped failed logins into 5-minute time brackets and flagged activity when attempts exceeded a threshold from a single source IP.
 This better represents how a SOC might detect brute force behavior
 
-# PICTURE
+# Detection Output:
 ![Vizualization](images/aggregatedetection.png)
 
 # Log Validation
