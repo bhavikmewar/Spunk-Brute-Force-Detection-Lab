@@ -33,8 +33,14 @@ Sourcetype: WinEventLog:Security
 - 4672 - Special privileges assigned to new logon
 
 #  Attack Simulation
+
+
 To simulate brute force behavior, I generated repeated RDP login attempts from the Kali Linux VM using xfreerdp3 command.
+
+
 These attempts created multple Event ID 4625 logs in Windows.
+
+
 RDP kali command used:
 ![Vizualization](images/kalihydracommand.png)
 
