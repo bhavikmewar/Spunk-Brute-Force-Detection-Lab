@@ -1,6 +1,7 @@
-# Spunk-Brute-Force-Detection-Lab
-Detect repeated failed Windows logins and alert on potential brute-force activity
+# Spunk Brute Force Detection Lab
+This project documents a homelab where i built a small SIEM environment using Splunk to detect brute force login activity againsta a Windows 10 machine
 
+The goal was to simulate an attack, generate logs, forward
 # Project Overview
 The project simulates a real-world brute force attack against a Windows system 
 Windows Security Logs are forwarded to a centralized Splunk server
