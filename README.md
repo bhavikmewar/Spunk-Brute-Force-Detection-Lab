@@ -34,7 +34,7 @@ Sourcetype: WinEventLog:Security
 - 4625 - Failed Logon
 - 4672 - Special privileges assigned to new logon
 
-#  Attack Simulation
+# Attack Simulation
 
 
 To simulate brute force behavior, I generated repeated RDP login attempts from the Kali Linux VM using the xfreerdp3 tool.
