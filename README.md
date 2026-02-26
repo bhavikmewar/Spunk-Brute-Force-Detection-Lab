@@ -1,8 +1,11 @@
 # Spunk Brute Force Detection Lab
 
+
 In this lab, I built a small SIEM environment using Splunk to detect brute force login attempts against a Windows 10 machine.
 
+
 I created three virtual machines (Ubuntu Linux, Windows 10, and Kali Linux).
+
 
 The goal was to understand how brute force attacks appear in logs and how a SOC analyst would detect them.
 
