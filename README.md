@@ -44,62 +44,54 @@ These attempts created multple Event ID 4625 logs in Windows.
 RDP kali command used:
 ![Vizualization](images/kalihydracommand.png)
 
+# Detection 1 - Multiple Failed Logins
+
+
+The first detection identifies repeated failed login attempts.
+
+
+This helped confirm:
+- Logs were being ingested correctly
+- The attacker IP was visible
+- Failed log counts increased during the attack
+
+
 # SPL Brute Force Detection
 ![Brute Force Detection](images/detectionquery.png)
 
 # Behavioral Visualization
-To identify burst patterns consistent with brute force activity, the following time-based analysis was performed
+To identify burst patterns, I analyzed failed logins over time to see spikes during the attack window
 
 # Visualization
 ![Vizualization](images/Visualization.png)
 
-# Attack Simulation
-Repeated RDP authentication attempts were generated from a Kali Linux VM using xfreedp3 to simulate login behavior. These attempts were successful and generated Windows Security Event ID 4625
-
-# RDP kali command
-![Vizualization](images/kalihydracommand.png)
-
-# Log Validation
-Windows Security Logs were forwarded to Splunk using the Universal Fowarder and validated in the WinEventLog:Security sourcetype
-
-# Proof
-![Vizualization](images/Proofoflog.png)
-
-
-# Detection 2 - Threshold Based Brute Force Detection
-# Objective
-Detect potential brute-force authentication activity by identifying multiple failed Windows login attempts (Event ID 4625) from a single source IP within a short time window
-
-This detection focuses on behavioral patterns rather than individual failed logins
-
-# Detection Logic
-Brute force attacks typically generate:
-- Multiple failed login attempts
-- From the same source IP
-- Within a short time span
-- Targeting the same account
-To detect this behavior, failed logon events were grouped into 5-minute brackets and aggregated by the source IP address
-
-# Detection Output
-The query identified repeated failed autheication attempts from the Kali Linux VM attacker IP within a short time window
+--
+# Detection 2 - Threshold-Based Brute Force Detection
+This detection is more realistic
+Instead of just counting failures, I grouped failed logins into 5-minute time brackets and flagged activity when attempts exceeded a threshold from a single source IP.
+This better represents how a SOC might detect brute force behavior
 
 # PICTURE
 ![Vizualization](images/aggregatedetection.png)
 
-# Attack Simulation
-Authenitcation failures were generated from a Kali Linux VM using automated login attempts
-
-# Picture
-![Vizualization](images/AttackSimulation.png)
-
 # Log Validation
-The failed authentication events were verified in:
-- Windows Events Viewer (Event ID 4625)
-- Splunk Raw Events (WinEventLog:Security)
-- Source_Network_Address field matched Kali IP
+I verified the attack activity in multiple places:
 
-# Picutre
+- Windows Event Viewer (Event ID 4625)
+- Splunk raw events (WinEventLog:Security)
+- Source_Network_Address field matching the Kali attacker IP
+
+# Windows Event Viewer
 ![Vizualization](images/WindowsEventViewer.png)
 
-# Picture
+# Splunk Raw Events
 ![Vizualization](images/SplunkRawEvents.png)
+
+
+# What I learned
+- How to configure Splunk Universal Forwarder
+- How Windows authentication logs are structured
+- How to write SPL queries for detection
+- How brute force activity appears in logs
+- How time-based aggregation improves detection accuracy
+- How to build and segment a small virtual lab environment
