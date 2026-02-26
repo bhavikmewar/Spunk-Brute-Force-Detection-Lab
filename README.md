@@ -37,7 +37,7 @@ Sourcetype: WinEventLog:Security
 #  Attack Simulation
 
 
-To simulate brute force behavior, I generated repeated RDP login attempts from the Kali Linux VM using xfreerdp3 tool.
+To simulate brute force behavior, I generated repeated RDP login attempts from the Kali Linux VM using the xfreerdp3 tool.
 
 
 These attempts created multiple Event ID 4625 logs in Windows.
@@ -66,7 +66,7 @@ This helped confirm:
 *Figure 3: SPL search results displaying multiple failed logon attempts (Event ID 4625) from a single source IP*
 
 # Behavioral Visualization
-To identify burst patterns, I analyzed failed logins over time to see spikes during the attack window
+To identify burst patterns, I analyzed failed logins over time to see spikes during the attack window.
 
 # Visualization
 ![Visualization](images/Visualization.png)
@@ -99,6 +99,7 @@ I verified the attack activity in multiple places:
 ![Visualization](images/SplunkRawEvents.png)
 
 *Figure 7: Raw Windows Security logs successfully ingested into Splunk (WinEventLog:Security)*
+
 # What I learned
 - How to configure Splunk Universal Forwarder
 - How Windows authentication logs are structured
