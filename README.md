@@ -1,4 +1,4 @@
-# Spunk Brute Force Detection Lab
+# Splunk Brute Force Detection Lab
 
 
 In this lab, I built a small SIEM environment using Splunk to detect brute force login attempts against a Windows 10 machine.
@@ -23,7 +23,7 @@ The goal was to understand how brute force attacks appear in logs and how a SOC 
 
 # Data Sources
 Log Source: Windows 10 Security Event Logs
-Fowarder: Splunk Universal Forwarder
+Forwarder: Splunk Universal Forwarder
 Index: wineventlog
 Sourcetype: WinEventLog:Security
 
